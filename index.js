@@ -1,4 +1,18 @@
 const express = require('express');
+const cors = require('cors'); // Add this line
+
+const app = express();
+
+// CORS FIX - Add this block
+app.use(cors({
+  origin: [
+    'https://zaffy-frontend.vercel.app', 
+    'http://localhost:3000'
+  ],
+  methods: ['GET', 'POST']
+}));
+
+const express = require('express');
 const cors = require('cors');
 require('dotenv').config();
 
